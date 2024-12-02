@@ -1,0 +1,33 @@
+<odoo>
+    <record id="view_libreria_form" model="ir.ui.view">
+        <field name="name">libreria.libro.form</field>
+        <field name="model">libreria.libro</field>
+        <field name="arch" type="xml">
+            <form string="Libro">
+                <sheet>
+                    <group>
+                        <field name="titulo"/>
+                        <field name="paginas"/>
+                        <field name="autor"/>
+                        <field name="editorial"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_libreria_tree" model="ir.ui.view">
+        <field name="name">libreria.libro.tree</field>
+        <field name="model">libreria.libro</field>
+        <field name="arch" type="xml">
+            <tree string="Libros">
+                <field name="titulo"/>
+                <field name="autor"/>
+                <field name="editorial"/>
+            </tree>
+        </field>
+    </record>
+
+    <menuitem id="menu_libreria_root" name="Librería" sequence="10"/>
+    <menuitem id="menu_libreria_libros" name="Libros" parent="menu_libreria_root" action="action_libreria_libros"/>
+</odoo>
